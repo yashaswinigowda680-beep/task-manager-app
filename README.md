@@ -1,68 +1,150 @@
-# Task Manager App
+# 📋 Task Manager App
 
-## Overview
-A simple Task Manager application where users can register, login, and manage tasks across three stages:
+> A full-stack task management application that allows users to register, log in, and manage tasks across Todo, In Progress, and Done stages.
 
-- Todo
-- In Progress
-- Done
+🔗 **Frontend Live Demo:** https://task-manager-app-mu-tan.vercel.app  
+🛠️ **Backend API:** https://task-manager-app-1-fqm8.onrender.com
 
-## Features
+---
 
-### Authentication
-- User Registration
-- User Login
-- JWT Authentication
+## ✨ Features
 
-### Task Management
-- Create Tasks
-- Edit Tasks
-- Delete Tasks
-- Change Task Status
+- **Authentication** — Register, log in, and stay signed in with JWT tokens
+- **Kanban Board** — Organize tasks across *Todo*, *In Progress*, and *Done*
+- **Full CRUD** — Create, edit, delete, and move tasks between stages
+- **Responsive Design** — Works on desktop and mobile
+- **Error Handling** — Inline feedback for failed requests and loading states
 
-### UI
-- Responsive Design
-- Loading States
-- Error Handling
+---
 
-## Tech Stack
+## 🖼️ Screenshot
 
-### Frontend
-- React
-- TypeScript
-- Vite
-- CSS
+ <img width="809" height="914" alt="image" src="https://github.com/user-attachments/assets/779fab55-96a8-4528-9df8-5dc8f82a4fa3" />
 
-### Backend
-- FastAPI
-- SQLAlchemy
-- SQLite
+ 
+ 
 
-## Assumptions
-- Each user manages only their own tasks.
-- SQLite is sufficient for this assignment.
-- Tasks have title, description, and stage.
+---
 
-## Tradeoffs
-- SQLite used instead of PostgreSQL for simplicity.
-- Drag-and-drop functionality was not implemented.
-- Simple UI prioritized over advanced animations.
+## 🧰 Tech Stack
 
-## Technical Decisions
-- FastAPI chosen for lightweight backend APIs.
-- JWT authentication used for secure login.
-- React Context API used for authentication state management.
-- Three-column board structure used for task stages.
+| Layer | Technology |
+|---|---|
+| Frontend | React, TypeScript, Vite, CSS |
+| Backend | FastAPI, SQLAlchemy |
+| Database | SQLite |
+| Authentication | JWT (JSON Web Tokens) |
+| Deployment | Vercel (frontend), Render (backend) |
 
-## Frontend Deployment
-https://task-manager-app-mu-tan.vercel.app
+---
 
-## Backend Deployment
-https://task-manager-app-1-fqm8.onrender.com
+## 🚀 Getting Started
 
-## Future Improvements
-- Drag and Drop Tasks
-- Task Due Dates
-- Task Priorities
-- PostgreSQL Database
-- User Profile Management
+### Prerequisites
+
+- Node.js 18+
+- Python 3.10+
+- pip
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/yashaswinigowda680-beep/task-manager-app.git
+cd task-manager-app
+```
+
+### 2. Backend setup
+
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+
+- API: `http://localhost:8000`
+- Docs: `http://localhost:8000/docs`
+
+### 3. Frontend setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+- App: `http://localhost:5173`
+
+---
+
+## 📡 API Endpoints
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/auth/register` | Register a new user |
+| POST | `/auth/login` | Log in and receive a JWT |
+| GET | `/tasks` | Get all tasks for current user |
+| POST | `/tasks` | Create a new task |
+| PUT | `/tasks/{id}` | Update a task |
+| DELETE | `/tasks/{id}` | Delete a task |
+
+---
+
+## 📂 Project Structure
+
+```
+task-manager-app/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── store/
+│   │   ├── types/
+│   │   └── api/
+│   └── public/
+└── backend/
+    ├── routers/
+    ├── main.py
+    ├── database.py
+    ├── models.py
+    ├── schemas.py
+    ├── auth.py
+    └── requirements.txt
+```
+
+---
+
+## ⚖️ Tradeoffs
+
+| Decision | Reason |
+|---|---|
+| SQLite over PostgreSQL | Faster setup and simpler deployment |
+| JWT stored on client side | Simpler implementation for assignment scope |
+| No drag-and-drop | Prioritized core functionality within timeline |
+| Simple CSS styling | Focused on usability and responsiveness |
+
+---
+
+## 🏗️ Technical Decisions
+
+- **FastAPI** — Lightweight, high-performance backend with auto-generated API docs
+- **React + TypeScript** — Better maintainability and type safety on the frontend
+- **React Context API** — Simple auth state management without Redux overhead
+- **SQLAlchemy ORM** — Clean database operations with easy migration path to PostgreSQL
+- **JWT Authentication** — Secure, stateless user sessions
+
+---
+
+## 🔮 Future Improvements
+
+- [ ] Drag and drop tasks between stages
+- [ ] Task priorities and due dates
+- [ ] PostgreSQL integration
+- [ ] Dark mode
+- [ ] User profile management
+- [ ] Email notifications
+
+---
+
+## 📄 License
+
+This project was created as part of an inte
